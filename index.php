@@ -24,15 +24,7 @@
 		
         <?php
     session_start();
-    /*if ($_SESSION['log']!=null){
-        echo "
-<script>
-window.location='notes.php';
-</script>
-";
-    }
-    else
-    {*/
+    
 $log=$_GET['log'];
 $pass=$_GET['pass'];
 $type=$_GET['type'];
@@ -44,19 +36,6 @@ if ($content==null and $type=="Вход"){
     echo '<script>
     alert("Неправильный логин или пароль!");
     window.location="index.php";
-    </script>';
-    return false;
-    }
-if ($content==null and $type=="Регистрация"){
-    $users->insert($user);
-    echo '<script>
-    alert("Вы успешно зарегистрированы");
-    </script>';
-    return false;
-    }
-if ($content!=null and $type=="Регистрация"){
-    echo '<script>
-    alert("Такой логин уже используется!");
     </script>';
     return false;
     }
